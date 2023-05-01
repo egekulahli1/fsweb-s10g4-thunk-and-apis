@@ -28,7 +28,7 @@ export function myReducer(state = initial, action) {
     case FAV_ADD:
       let isAlreadyFav = state.favs.every((fav) => fav.id !== action.payload.id);
       writeFavsToLocalStorage(newFavList);
-      console.log(isAlreadyFav, 'isAlreadyFav');
+      
       const newFavList = isAlreadyFav ? [...state.favs, action.payload] : state.favs;
       toast.success("Favorilere eklendi");
       
